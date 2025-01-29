@@ -3,11 +3,11 @@
 
 ---
 
-# ![Armindo_OS Logo](./public/0xrubusdata.png)
+# ![Armind_OS Logo](./public/0xrubusdata.png)
 
 
-## 🌟 Welcome to **Armindo_OS**
-**Armindo_OS** is a next-generation AI-driven framework that enables the creation of intelligent agents capable of managing missions autonomously, interacting with external APIs, and continuously improving through learning.
+## 🌟 Welcome to **Armind_OS**
+**Armind_OS** is a next-generation AI-driven framework that enables the creation of intelligent agents capable of managing missions autonomously, interacting with external APIs, and continuously improving through learning.
 
 ### Why is it revolutionary?
 - **Hybrid Intelligence**: Combines local and external intelligence (e.g., OpenAI API) for flexible and scalable decision-making.

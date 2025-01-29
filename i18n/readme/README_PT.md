@@ -1,8 +1,8 @@
 
-# ![Logo Armindo_OS](../../public/0xrubusdata.png)
+# ![Logo Armind_OS](../../public/0xrubusdata.png)
 
-## 🌟 Bem-vindo ao **Armindo_OS**
-**Armindo_OS** é um framework de próxima geração impulsionado por IA que permite a criação de agentes inteligentes capazes de gerenciar missões de forma autônoma, interagir com APIs externas e melhorar continuamente através do aprendizado.
+## 🌟 Bem-vindo ao **Armind_OS**
+**Armind_OS** é um framework de próxima geração impulsionado por IA que permite a criação de agentes inteligentes capazes de gerenciar missões de forma autônoma, interagir com APIs externas e melhorar continuamente através do aprendizado.
 
 ### Por que é revolucionário?
 - **Inteligência híbrida**: Combina inteligência local e externa (por exemplo, API OpenAI) para uma tomada de decisão flexível e escalável.
