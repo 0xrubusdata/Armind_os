@@ -17,7 +17,7 @@ services:
       context: ./frontend
     container_name: frontend
     ports:
-      - "80:80"
+      - "4000:80"
     volumes:
       - ./frontend:/app
       - ./shared-config:/app/public/config
