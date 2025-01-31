@@ -1,13 +1,10 @@
+"use client";
+
+import React from "react";
 import { Button as MUIButton, ButtonProps } from "@mui/material";
 
-interface CustomButtonProps extends ButtonProps {
-  children: React.ReactNode;
-}
-
-const Button: React.FC<CustomButtonProps> = ({ children, variant = "contained", ...props }) => (
-  <MUIButton variant={variant} {...props}>
-    {children}
-  </MUIButton>
+const Button = (props: ButtonProps) => (
+  <MUIButton variant="contained" {...props} />
 );
 
 export default Button;
