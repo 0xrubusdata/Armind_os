@@ -73,3 +73,14 @@ This project is licensed under the MIT License.
 
 ---
 
+## 📝 **Author**
+- 👤 0xRubusData 
+- 📧 Contact: 0xRubusData@gmail.com
+- 🌍 GitHub: https://github.com/0xrubusdata/Armind_os
+
+## 🌐 Connect with Us
+- **Twitter (X)**: [0xRubusData](https://x.com/Data0x88850)
+- **Website**: [RubusLab](https://rubus-lab.vercel.app/)
+
+## 🎯 **Happy Coding!** 🚀
+
