@@ -3,7 +3,7 @@
 
 ---
 
-# ![Armind_OS Logo](./public/0xrubusdata.png)
+# ![Armind_OS Logo](./public/agents/armindos.png)
 
 
 ## 🌟 Welcome to **Armind_OS**
@@ -46,11 +46,6 @@ To update the roadmap, simply edit this file to reflect the completion status.
 
 ---
 
-## 🌐 Connect with Us
-- **Twitter (X)**: [0xRubusData](https://x.com/Data0x88850)
-- **Website**: [RubusData](https://simple-agent-website.vercel.app/)
-
----
 
 ## 📂 Multilingual Support
 This project is available in multiple languages. Check the `i18n/readme/` directory for translations:
