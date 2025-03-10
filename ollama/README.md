@@ -211,12 +211,25 @@ Standard HTTP status codes:
 4. Push to the branch
 5. Create a Pull Request
 
-## License
+---
 
-MIT License - Free to use and contribute!
+## 🎨 How to Contribute
+We welcome contributions from developers, designers, and visionaries. Feel free to fork this repository, submit issues, or open pull requests.
 
-## Author
+---
 
+## 📜 License
+This project is licensed under the MIT License.
+
+---
+
+## 📝 **Author**
 - 👤 0xRubusData 
 - 📧 Contact: 0xRubusData@gmail.com
-- 🌍 GitHub: https://github.com/0xRubusData/armind_os/ollama
+- 🌍 GitHub: https://github.com/0xrubusdata/Armind_os/ollama
+
+## 🌐 Connect with Us
+- **Twitter (X)**: [0xRubusData](https://x.com/Data0x88850)
+- **Website**: [RubusLab](https://rubus-lab.vercel.app/)
+
+## 🎯 **Happy Coding!** 🚀
