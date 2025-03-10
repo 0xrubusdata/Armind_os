@@ -1,0 +1,199 @@
+{
+    "info": {
+        "name": "TA-Lib API",
+        "description": "Collection for Technical Analysis Library API endpoints",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "General",
+            "item": [
+                {
+                    "name": "Root",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/",
+                            "host": ["{{base_url}}"],
+                            "path": [""]
+                        },
+                        "description": "Get API information"
+                    }
+                },
+                {
+                    "name": "Health Check",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/health",
+                            "host": ["{{base_url}}"],
+                            "path": ["health"]
+                        },
+                        "description": "Check API health status"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Momentum Indicators",
+            "item": [
+                {
+                    "name": "RSI",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"real\": [44.34, 44.09, 44.15, 43.61, 44.33, 44.83, 45.10, 45.42],\n    \"timeperiod\": 14\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/talib/momentum/RSI",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "talib", "momentum", "RSI"]
+                        },
+                        "description": "Calculate Relative Strength Index"
+                    }
+                },
+                {
+                    "name": "MACD",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"real\": [44.34, 44.09, 44.15, 43.61, 44.33, 44.83, 45.10, 45.42],\n    \"fastperiod\": 12,\n    \"slowperiod\": 26,\n    \"signalperiod\": 9\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/talib/momentum/MACD",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "talib", "momentum", "MACD"]
+                        },
+                        "description": "Calculate Moving Average Convergence/Divergence"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Overlap Studies",
+            "item": [
+                {
+                    "name": "SMA",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"real\": [10.0, 11.0, 12.0, 13.0, 14.0],\n    \"timeperiod\": 3\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/talib/overlap/SMA",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "talib", "overlap", "SMA"]
+                        },
+                        "description": "Calculate Simple Moving Average"
+                    }
+                },
+                {
+                    "name": "BBANDS",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"real\": [44.34, 44.09, 44.15, 43.61, 44.33, 44.83, 45.10, 45.42],\n    \"timeperiod\": 5,\n    \"nbdevup\": 2,\n    \"nbdevdn\": 2,\n    \"matype\": 0\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/talib/overlap/BBANDS",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "talib", "overlap", "BBANDS"]
+                        },
+                        "description": "Calculate Bollinger Bands"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Volatility Indicators",
+            "item": [
+                {
+                    "name": "ATR",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"high\": [44.34, 44.09, 44.15, 43.61, 44.33],\n    \"low\": [44.20, 44.00, 44.03, 43.50, 44.15],\n    \"close\": [44.23, 44.05, 44.10, 43.55, 44.23],\n    \"timeperiod\": 14\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/talib/volatility/ATR",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "talib", "volatility", "ATR"]
+                        },
+                        "description": "Calculate Average True Range"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Volume Indicators",
+            "item": [
+                {
+                    "name": "OBV",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"real\": [44.34, 44.09, 44.15, 43.61, 44.33],\n    \"volume\": [1000, 2000, 1500, 1800, 2100]\n}"
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/talib/volume/OBV",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "talib", "volume", "OBV"]
+                        },
+                        "description": "Calculate On Balance Volume"
+                    }
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:5300",
+            "type": "string"
+        }
+    ]
+} 
