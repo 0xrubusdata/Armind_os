@@ -204,20 +204,25 @@ Error response format:
 - [TA-Lib](https://ta-lib.org/) - Technical Analysis Library
 - [FastAPI](https://fastapi.tiangolo.com/) - Modern Python web framework
 
+---
+
+## 🎨 How to Contribute
+We welcome contributions from developers, designers, and visionaries. Feel free to fork this repository, submit issues, or open pull requests.
+
+---
+
 ## 📜 License
-MIT License - Free to use and contribute!
+This project is licensed under the MIT License.
+
+---
 
 ## 📝 **Author**
 - 👤 0xRubusData 
 - 📧 Contact: 0xRubusData@gmail.com
-- 🌍 GitHub: https://github.com/0xRubusData/armind_os/tool
+- 🌍 GitHub: https://github.com/0xrubusdata/Armind_os/tool
 
 ## 🌐 Connect with Us
 - **Twitter (X)**: [0xRubusData](https://x.com/Data0x88850)
 - **Website**: [RubusLab](https://rubus-lab.vercel.app/)
 
-## 🤝 Contributing
-Contributions are welcome! Open an issue or submit a PR.
-
----
-🚀 **Stay tuned for updates as Rubus-Code evolves!**
+## 🎯 **Happy Coding!** 🚀

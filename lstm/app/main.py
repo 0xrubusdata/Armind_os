@@ -1,48 +1,72 @@
-from fastapi import FastAPI, HTTPException
-from app.services.general_service import get_general_response
-from app.services.economic_service import get_economic_response
-from app.services.legal_service import get_legal_response
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+import time
+import logging
 
-app = FastAPI()
+from app.api.v1.endpoints import model, train, evaluate
+from app.core.config import settings
+from app.core.exceptions import LSTMError
 
-@app.get("/api/general")
-def general_endpoint(prompt: str):
+# Setup logging
+logger = logging.getLogger(__name__)
+
+# Create FastAPI app
+app = FastAPI(
+    title=settings.PROJECT_NAME,
+    description="API for LSTM-based time series prediction",
+    version="1.0.0"
+)
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Add timing middleware
+@app.middleware("http")
+async def add_process_time_header(request: Request, call_next):
+    start_time = time.time()
     try:
-        response = get_general_response(prompt)
-        return {"service": "general", "response": response}
-    except HTTPException as e:
-        # L'exception est propagée avec le bon code (404 ou autre)
-        # [🇬🇧 The exception is propagated with the correct code (404 or other)] | [🇪🇸 La excepción se propaga con el código correcto (404 u otro)] | [🇵🇹 A exceção é propagada com o código correto (404 ou outro)] | [🇰🇷 例外は適切なコード (404 またはその他) で伝播されます] | [🇷🇺 Исключение передается с правильным кодом (404 или другим)] | [🇦🇪 يتم نشر الاستثناء برمز صحيح (404 أو غيره)]
-        raise e
+        response = await call_next(request)
+        process_time = time.time() - start_time
+        response.headers["X-Process-Time"] = str(process_time)
+        return response
     except Exception as e:
-        # Pour tout autre type d'erreur, renvoyer un statut 500
-        # [🇬🇧 For any other type of error, return a 500 status] | [🇪🇸 Para cualquier otro tipo de error, devolver un estado 500] | [🇵🇹 Para qualquer outro tipo de erro, retornar um status 500] | [🇰🇷 その他のエラーに対しては、500 ステータスを返します] | [🇷🇺 Для любого другого типа ошибки вернуть статус 500] | [🇦🇪 لأي نوع آخر من الأخطاء، قم بإرجاع حالة 500]
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Request failed: {str(e)}")
+        return JSONResponse(
+            status_code=500,
+            content={"detail": "Internal server error"}
+        )
 
-@app.get("/api/economic")
-async def economic_endpoint(prompt: str):
-    try:
-        response = get_economic_response(prompt)
-        return {"service": "economic", "response": response}
-    except HTTPException as e:
-        # L'exception est propagée avec le bon code (404 ou autre)
-        # [🇬🇧 The exception is propagated with the correct code (404 or other)] | [🇪🇸 La excepción se propaga con el código correcto (404 u otro)] | [🇵🇹 A exceção é propagada com o código correto (404 ou outro)] | [🇰🇷 例外は適切なコード (404 またはその他) で伝播されます] | [🇷🇺 Исключение передается с правильным кодом (404 или другим)] | [🇦🇪 يتم نشر الاستثناء برمز صحيح (404 أو غيره)]
-        raise e
-    except Exception as e:
-        # Pour tout autre type d'erreur, renvoyer un statut 500
-        # [🇬🇧 For any other type of error, return a 500 status] | [🇪🇸 Para cualquier otro tipo de error, devolver un estado 500] | [🇵🇹 Para qualquer outro tipo de erro, retornar um status 500] | [🇰🇷 その他のエラーに対しては、500 ステータスを返します] | [🇷🇺 Для любого другого типа ошибки вернуть статус 500] | [🇦🇪 لأي نوع آخر من الأخطاء، قم بإرجاع حالة 500]
-        raise HTTPException(status_code=500, detail=str(e))
+# Include routers
+app.include_router(
+    model.router,
+    prefix=settings.API_V1_STR
+)
+app.include_router(
+    train.router,
+    prefix=settings.API_V1_STR
+)
+app.include_router(
+    evaluate.router,
+    prefix=settings.API_V1_STR
+)
 
-@app.get("/api/legal")
-async def legal_endpoint(prompt: str):
-    try:
-        response = get_legal_response(prompt)
-        return {"service": "legal", "response": response}
-    except HTTPException as e:
-        # L'exception est propagée avec le bon code (404 ou autre)
-        # [🇬🇧 The exception is propagated with the correct code (404 or other)] | [🇪🇸 La excepción se propaga con el código correcto (404 u otro)] | [🇵🇹 A exceção é propagada com o código correto (404 ou outro)] | [🇰🇷 例外は適切なコード (404 またはその他) で伝播されます] | [🇷🇺 Исключение передается с правильным кодом (404 или другим)] | [🇦🇪 يتم نشر الاستثناء برمز صحيح (404 أو غيره)]
-        raise e
-    except Exception as e:
-        # Pour tout autre type d'erreur, renvoyer un statut 500
-        # [🇬🇧 For any other type of error, return a 500 status] | [🇪🇸 Para cualquier otro tipo de error, devolver un estado 500] | [🇵🇹 Para qualquer outro tipo de erro, retornar um status 500] | [🇰🇷 その他のエラーに対しては、500 ステータスを返します] | [🇷🇺 Для любого другого типа ошибки вернуть статус 500] | [🇦🇪 لأي نوع آخر من الأخطاء، قم بإرجاع حالة 500]
-        raise HTTPException(status_code=500, detail=str(e))
+@app.get("/")
+async def root():
+    """Root endpoint."""
+    return {
+        "name": settings.PROJECT_NAME,
+        "version": "1.0.0",
+        "description": "API for LSTM-based time series prediction"
+    }
+
+@app.get("/health")
+async def health_check():
+    """Health check endpoint."""
+    return {"status": "healthy"}
