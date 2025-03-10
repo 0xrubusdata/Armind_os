@@ -253,6 +253,12 @@ The API uses standard HTTP status codes:
 
 Errors include detailed messages to help diagnose issues.
 
+## Testing
+
+The LSTM API includes a comprehensive test suite that covers unit tests, integration tests, and load testing. The tests are organized in the `tests/` directory.
+
+### Test Structure
+
 ---
 
 ## 🎨 How to Contribute
