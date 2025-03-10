@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "${OLLAMA_PORT:-8000}:8000"
+    environment:
+      - MODEL_NAME=${MODEL_NAME:-llama2}
+      - OLLAMA_PORT=${OLLAMA_PORT:-8000}
+      - DEBUG=${DEBUG:-false}
+    volumes:
+      - ./app:/app/app
+    depends_on:
+      - ollama
+    networks:
+      - ollama-network
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - ollama-network
+
+volumes:
+  ollama_data:
+
+networks:
+  ollama-network:
+    driver: bridge 
