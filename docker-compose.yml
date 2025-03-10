@@ -1,29 +1,29 @@
 services:
-  # posgre:
-  #   image: postgres:latest
-  #   container_name: posgre
-  #   restart: always
-  #   environment:
-  #     POSTGRES_USER: ${POSTGRES_USER}
-  #     POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-  #     POSTGRES_DB: ${POSTGRES_DB}
-  #   volumes:
-  #     - posgre_data:/var/lib/postgresql/data
-  #   ports:
-  #     - "${POSTGRES_PORT}:${POSTGRES_PORT}"
-  #   networks:
-  #     - armindos-network  
+  posgre:
+    image: postgres:latest
+    container_name: posgre
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - posgre_data:/var/lib/postgresql/data
+    ports:
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
+    networks:
+      - armindos-network  
 
-  # adminer:
-  #   image: adminer
-  #   container_name: adminer
-  #   restart: always
-  #   environment:
-  #     ADMINER_DEFAULT_SERVER: posgre
-  #   ports:
-  #     - "${ADMINER_PORT}:${ADMINER_PORT}"    
-  #   networks:
-  #     - armindos-network      
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    environment:
+      ADMINER_DEFAULT_SERVER: posgre
+    ports:
+      - "${ADMINER_PORT}:${ADMINER_PORT}"    
+    networks:
+      - armindos-network      
 
   # faiss:
   #   build:
@@ -37,51 +37,51 @@ services:
   #   networks:
   #     - armindos-network      
 
-  # ollama:
-  #   build:
-  #     context: ./ollama
-  #   container_name: ollama
-  #   restart: always
-  #   ports:
-  #     - "${OLLAMA_PORT}:${OLLAMA_PORT}"
-  #   environment:
-  #     OLLAMA_PORT: ${OLLAMA_PORT}
-  #     MODEL_NAME: ${OLLAMA_LOCAL_MODEL_NAME}
-  #     MODEL_NUMA: ${OLLAMA_LOCAL_MODEL_NUMA}
-  #     MODEL_NUM_BATCH: ${OLLAMA_LOCAL_MODEL_NUM_BATCH}
-  #     MODEL_NUM_GPU: ${OLLAMA_LOCAL_MODEL_NUM_GPU}
-  #     MODEL_MAIN_GPU: ${OLLAMA_LOCAL_MODEL_MAIN_GPU}
-  #     MODEL_LOW_VRAM: ${OLLAMA_LOCAL_MODEL_LOW_VRAM}
-  #     MODEL_USE_MAP: ${OLLAMA_LOCAL_MODEL_USE_MAP}
-  #     MODEL_USE_LOCK: ${OLLAMA_LOCAL_MODEL_USE_LOCK}
-  #     MODEL_NUM_THREAD: ${OLLAMA_LOCAL_MODEL_NUM_THREAD}
-  #     MODEL_NUM_CTX: ${OLLAMA_LOCAL_MODEL_NUM_CTX}
-  #     MODEL_F16_KV: ${OLLAMA_LOCAL_MODEL_F16_KV}
-  #     MODEL_LOGITS_ALL: ${OLLAMA_LOCAL_MODEL_LOGITS_ALL}
-  #     MODEL_VOCAB_ONLY: ${OLLAMA_LOCAL_MODEL_VOCAB_ONLY}
-  #     MODEL_EMBEDDING_ONLY: ${OLLAMA_LOCAL_MODEL_EMBEDDING_ONLY}
-  #     MODEL_NUM_KEEP: ${OLLAMA_LOCAL_MODEL_NUM_KEEP}
-  #     MODEL_SEED: ${OLLAMA_LOCAL_MODEL_SEED}
-  #     MODEL_NUM_PREDICT: ${OLLAMA_LOCAL_MODEL_NUM_PREDICT}
-  #     MODEL_TOP_K: ${OLLAMA_LOCAL_MODEL_TOP_K}
-  #     MODEL_TOP_P: ${OLLAMA_LOCAL_MODEL_TOP_P}
-  #     MODEL_TFS_Z: ${OLLAMA_LOCAL_MODEL_TFS_Z}
-  #     MODEL_TYPICAL_P: ${OLLAMA_LOCAL_MODEL_TYPICAL_P}
-  #     MODEL_REPEAT_LAST_N: ${OLLAMA_LOCAL_MODEL_REPEAT_LAST_N}
-  #     MODEL_TEMPERATURE: ${OLLAMA_LOCAL_MODEL_TEMPERATURE}
-  #     MODEL_REPEAT_PENALTY: ${OLLAMA_LOCAL_MODEL_REPEAT_PENALTY}
-  #     MODEL_PRESENCE_PENALTY: ${OLLAMA_LOCAL_MODEL_PRESENCE_PENALTY}
-  #     MODEL_FREQUENCY_PENALTY: ${OLLAMA_LOCAL_MODEL_FREQUENCY_PENALTY}
-  #     MODEL_MIROSTAT: ${OLLAMA_LOCAL_MODEL_MIROSTAT}
-  #     MODEL_MIROSTAT_TAU: ${OLLAMA_LOCAL_MODEL_MIROSTAT_TAU}
-  #     MODEL_MIROSTAT_ETA: ${OLLAMA_LOCAL_MODEL_MIROSTAT_ETA}
-  #     MODEL_PENALIZE_NEWLINE: ${OLLAMA_LOCAL_MODEL_PENALIZE_NEWLINE}
-  #     MODEL_STOP: ${OLLAMA_LOCAL_MODEL_STOP}
-  #     TOOL_PORT: ${TOOL_PORT}
-  #     LSTM_PORT: ${LSTM_PORT}
-  #   networks:
-  #     - armindos-network  
-  #   command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "${OLLAMA_PORT}", "--reload"]  
+  ollama:
+    build:
+      context: ./ollama
+    container_name: ollama
+    restart: always
+    ports:
+      - "${OLLAMA_PORT}:${OLLAMA_PORT}"
+    environment:
+      OLLAMA_PORT: ${OLLAMA_PORT}
+      MODEL_NAME: ${OLLAMA_LOCAL_MODEL_NAME}
+      MODEL_NUMA: ${OLLAMA_LOCAL_MODEL_NUMA}
+      MODEL_NUM_BATCH: ${OLLAMA_LOCAL_MODEL_NUM_BATCH}
+      MODEL_NUM_GPU: ${OLLAMA_LOCAL_MODEL_NUM_GPU}
+      MODEL_MAIN_GPU: ${OLLAMA_LOCAL_MODEL_MAIN_GPU}
+      MODEL_LOW_VRAM: ${OLLAMA_LOCAL_MODEL_LOW_VRAM}
+      MODEL_USE_MAP: ${OLLAMA_LOCAL_MODEL_USE_MAP}
+      MODEL_USE_LOCK: ${OLLAMA_LOCAL_MODEL_USE_LOCK}
+      MODEL_NUM_THREAD: ${OLLAMA_LOCAL_MODEL_NUM_THREAD}
+      MODEL_NUM_CTX: ${OLLAMA_LOCAL_MODEL_NUM_CTX}
+      MODEL_F16_KV: ${OLLAMA_LOCAL_MODEL_F16_KV}
+      MODEL_LOGITS_ALL: ${OLLAMA_LOCAL_MODEL_LOGITS_ALL}
+      MODEL_VOCAB_ONLY: ${OLLAMA_LOCAL_MODEL_VOCAB_ONLY}
+      MODEL_EMBEDDING_ONLY: ${OLLAMA_LOCAL_MODEL_EMBEDDING_ONLY}
+      MODEL_NUM_KEEP: ${OLLAMA_LOCAL_MODEL_NUM_KEEP}
+      MODEL_SEED: ${OLLAMA_LOCAL_MODEL_SEED}
+      MODEL_NUM_PREDICT: ${OLLAMA_LOCAL_MODEL_NUM_PREDICT}
+      MODEL_TOP_K: ${OLLAMA_LOCAL_MODEL_TOP_K}
+      MODEL_TOP_P: ${OLLAMA_LOCAL_MODEL_TOP_P}
+      MODEL_TFS_Z: ${OLLAMA_LOCAL_MODEL_TFS_Z}
+      MODEL_TYPICAL_P: ${OLLAMA_LOCAL_MODEL_TYPICAL_P}
+      MODEL_REPEAT_LAST_N: ${OLLAMA_LOCAL_MODEL_REPEAT_LAST_N}
+      MODEL_TEMPERATURE: ${OLLAMA_LOCAL_MODEL_TEMPERATURE}
+      MODEL_REPEAT_PENALTY: ${OLLAMA_LOCAL_MODEL_REPEAT_PENALTY}
+      MODEL_PRESENCE_PENALTY: ${OLLAMA_LOCAL_MODEL_PRESENCE_PENALTY}
+      MODEL_FREQUENCY_PENALTY: ${OLLAMA_LOCAL_MODEL_FREQUENCY_PENALTY}
+      MODEL_MIROSTAT: ${OLLAMA_LOCAL_MODEL_MIROSTAT}
+      MODEL_MIROSTAT_TAU: ${OLLAMA_LOCAL_MODEL_MIROSTAT_TAU}
+      MODEL_MIROSTAT_ETA: ${OLLAMA_LOCAL_MODEL_MIROSTAT_ETA}
+      MODEL_PENALIZE_NEWLINE: ${OLLAMA_LOCAL_MODEL_PENALIZE_NEWLINE}
+      MODEL_STOP: ${OLLAMA_LOCAL_MODEL_STOP}
+      TOOL_PORT: ${TOOL_PORT}
+      LSTM_PORT: ${LSTM_PORT}
+    networks:
+      - armindos-network  
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "${OLLAMA_PORT}", "--reload"]  
 
   # lstm:
   #   build:
@@ -150,17 +150,17 @@ services:
   #   networks:
   #     - armindos-network  
 
-  # portainer:
-  #   image: portainer/portainer-ce
-  #   container_name: portainer
-  #   restart: always
-  #   ports:
-  #     - "${PORTAINER_PORT}:${PORTAINER_PORT}"
-  #   volumes:
-  #     - /var/run/docker.sock:/var/run/docker.sock
-  #     - portainer_data:/data  
-  #   networks:
-  #     - armindos-network    
+  portainer:
+    image: portainer/portainer-ce
+    container_name: portainer
+    restart: always
+    ports:
+      - "${PORTAINER_PORT}:${PORTAINER_PORT}"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data  
+    networks:
+      - armindos-network    
 
 volumes:
   posgre_data:

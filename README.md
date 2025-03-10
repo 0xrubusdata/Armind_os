@@ -1,8 +1,3 @@
-
-[🇬🇧 English](./) | [🇫🇷 Français](./i18n/readme/README_FR.md) | [🇪🇸 Español](./i18n/readme/README_ES.md) | [🇵🇹 Português](./i18n/readme/README_PT.md) | [🇯🇵 日本語](./i18n/readme/README_JP.md) | [🇷🇺 Русский](./i18n/readme/README_RU.md) | [🇸🇦 العربية](./i18n/readme/README_AR.md)
-
----
-
 # ![Armind_OS Logo](./public/agents/armindos.png)
 
 
@@ -43,18 +38,6 @@
 - ❌ = TODO
 
 To update the roadmap, simply edit this file to reflect the completion status.
-
----
-
-
-## 📂 Multilingual Support
-This project is available in multiple languages. Check the `i18n/readme/` directory for translations:
-- `README_FR.md` - Français
-- `README_ES.md` - Español
-- `README_PT.md` - Português
-- `README_JP.md` - 日本語
-- `README_RU.md` - Русский
-- `README_AR.md` - العربية
 
 ---
 
