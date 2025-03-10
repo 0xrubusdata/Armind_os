@@ -1,0 +1,204 @@
+{
+    "developers": [
+      {
+        "developer_name": "Dolphin",
+        "models": [
+          {
+            "model_name": "dolphin-mistral",
+            "versions": [
+              {
+                "model_size": "7b",
+                "file_size": "4.1GB"
+              }
+            ]
+          },
+          {
+            "model_name": "dolphin-llama3",
+            "versions": [
+              {
+                "model_size": "8b",
+                "file_size": "4.7GB"
+              }
+            ]
+          },
+          {
+            "model_name": "dolphin-phi",
+            "versions": [
+              {
+                "model_size": "2.7b",
+                "file_size": "1.6GB"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "developer_name": "Meta",
+        "models": [
+          {
+            "model_name": "llama3.3",
+            "versions": [
+              {
+                "model_size": "70b",
+                "file_size": "43GB"
+              }
+            ]
+          },
+          {
+            "model_name": "llama3.2",
+            "versions": [
+              {
+                "model_size": "1b",
+                "file_size": "1.3GB"
+              },
+              {
+                "model_size": "3b",
+                "file_size": "2.0GB"
+              }
+            ]
+          },
+          {
+            "model_name": "codellama",
+            "versions": [
+              {
+                "model_size": "7b",
+                "file_size": "3.8GB"
+              },
+              {
+                "model_size": "13b",
+                "file_size": "7.4GB"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "developer_name": "Microsoft",
+        "models": [
+          {
+            "model_name": "phi4",
+            "versions": [
+              {
+                "model_size": "14b",
+                "file_size": "9.1GB"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "developer_name": "Mistral AI",
+        "models": [
+          {
+            "model_name": "mistral",
+            "versions": [
+              {
+                "model_size": "7b",
+                "file_size": "4.1GB"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "developer_name": "Alibaba Cloud",
+        "models": [
+          {
+            "model_name": "qwen",
+            "versions": [
+              {
+                "model_size": "0.5b",
+                "file_size": "395MB"
+              },
+              {
+                "model_size": "1.8b",
+                "file_size": "1.1GB"
+              },
+              {
+                "model_size": "4b",
+                "file_size": "2.3GB"
+              },
+              {
+                "model_size": "7b",
+                "file_size": "4.5GB"
+              },
+              {
+                "model_size": "14b",
+                "file_size": "8.2GB"
+              },
+              {
+                "model_size": "32b",
+                "file_size": "18GB"
+              },
+              {
+                "model_size": "72b",
+                "file_size": "41GB"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "developer_name": "Google DeepMind",
+        "models": [
+          {
+            "model_name": "gemma",
+            "versions": [
+              {
+                "model_size": "2b",
+                "file_size": "1.7GB"
+              },
+              {
+                "model_size": "7b",
+                "file_size": "5.0GB"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "developer_name": "Deepseek",
+        "models": [
+          {
+            "model_name": "deepscaler",
+            "versions": [
+              {
+                "model_size": "1.5b",
+                "file_size": "3.6GB"
+              }
+            ]
+          },
+          {
+            "model_name": "deepseek-r1",
+            "versions": [
+              {
+                "model_size": "1.5b",
+                "file_size": "1.1GB"
+              },
+              {
+                "model_size": "7b",
+                "file_size": "4.7GB"
+              },
+              {
+                "model_size": "8b",
+                "file_size": "4.9GB"
+              },
+              {
+                "model_size": "14b",
+                "file_size": "9.0GB"
+              },
+              {
+                "model_size": "32b",
+                "file_size": "20GB"
+              },
+              {
+                "model_size": "70b",
+                "file_size": "43GB"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
