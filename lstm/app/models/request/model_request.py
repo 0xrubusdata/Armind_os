@@ -55,16 +55,16 @@ class DataConfig(BaseModel):
 class ModelRequest(BaseModel):
     """Request for creating a model."""
     name: str = Field(..., description="Model name")
-    model_config: Optional[ModelConfig] = Field(default_factory=ModelConfig)
-    training_config: Optional[TrainingConfig] = Field(default_factory=TrainingConfig)
-    data_config: Optional[DataConfig] = Field(default_factory=DataConfig)
+    model_configuration: Optional[ModelConfig] = Field(default_factory=ModelConfig)
+    training_configuration: Optional[TrainingConfig] = Field(default_factory=TrainingConfig)
+    data_configuration: Optional[DataConfig] = Field(default_factory=DataConfig)
 
 class TrainingRequest(BaseModel):
     """Request for training a model."""
     data: List[float] = Field(..., description="Training data")
     dates: Optional[List[str]] = Field(None, description="Data timestamps")
     symbol: Optional[str] = Field(None, description="Stock symbol")
-    config: Optional[Dict[str, Any]] = Field(None, description="Additional configuration")
+    configuration: Optional[Dict[str, Any]] = Field(None, description="Additional configuration")
 
 class PredictionRequest(BaseModel):
     """Request for making predictions."""
@@ -74,7 +74,7 @@ class PredictionRequest(BaseModel):
 class ModelResponse(BaseModel):
     """Response containing model information."""
     name: str
-    config: Dict[str, Any]
+    configuration: Dict[str, Any]
     status: str
     message: Optional[str] = None
 

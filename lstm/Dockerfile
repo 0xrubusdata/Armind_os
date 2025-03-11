@@ -1,5 +1,7 @@
 # Use an official Python runtime as a parent image
 FROM python:3.10-slim
+# Définir un argument qui sera passé lors du build
+ARG LSTM_PORT
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
@@ -28,8 +30,8 @@ COPY . .
 # Create directory for model storage
 RUN mkdir -p models
 
-# Expose port
-EXPOSE 8000
-
-# Run the application
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+EXPOSE ${LSTM_PORT}
+# Définir ENV à partir de ARG pour que la variable soit disponible au runtime
+ENV PORT=${LSTM_PORT}
+# Démarrer l'application avec uvicorn
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT}"]
