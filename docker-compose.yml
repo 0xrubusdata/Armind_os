@@ -25,17 +25,21 @@ services:
     networks:
       - armindos-network      
 
-  # faiss:
-  #   build:
-  #     context: ./faiss
-  #     args:
-  #       - FAISS_PORT=${FAISS_PORT}
-  #   container_name: faiss
-  #   restart: always
-  #   ports:
-  #     - "${FAISS_PORT}:${FAISS_PORT}"
-  #   networks:
-  #     - armindos-network      
+  faiss:
+    build:
+      context: ./faiss
+      args:
+        - FAISS_PORT=${FAISS_PORT}
+    container_name: faiss
+    restart: always
+    ports:
+      - "${FAISS_PORT}:${FAISS_PORT}"
+    depends_on:
+      - posgre  
+    environment:
+      POSTGRE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@posgre:${POSTGRES_PORT}/${POSTGRES_DB}    
+    networks:
+      - armindos-network      
 
   ollama:
     build:
@@ -83,21 +87,21 @@ services:
       - armindos-network  
     command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "${OLLAMA_PORT}", "--reload"]  
 
-  # lstm:
-  #   build:
-  #     context: ./lstm
-  #     args:
-  #       - LSTM_PORT=${LSTM_PORT}
-  #   container_name: lstm
-  #   restart: always
-  #   ports:
-  #     - "${LSTM_PORT}:${LSTM_PORT}"
-  #   depends_on:
-  #     - posgre  
-  #   environment:
-  #     POSTGRE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@posgre:${POSTGRES_PORT}/${POSTGRES_DB}  
-  #   networks:
-  #     - armindos-network  
+  lstm:
+    build:
+      context: ./lstm
+      args:
+        - LSTM_PORT=${LSTM_PORT}
+    container_name: lstm
+    restart: always
+    ports:
+      - "${LSTM_PORT}:${LSTM_PORT}"
+    depends_on:
+      - posgre  
+    environment:
+      POSTGRE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@posgre:${POSTGRES_PORT}/${POSTGRES_DB}  
+    networks:
+      - armindos-network  
 
   tool:
     build:
