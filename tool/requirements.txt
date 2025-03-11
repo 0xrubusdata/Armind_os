@@ -1,19 +1,20 @@
-fastapi==0.109.2
-uvicorn==0.27.1
-requests==2.31.0
-pydantic==2.6.1
-pydantic-settings==2.1.0
-python-dotenv==1.0.1
-numpy>=1.24.0
-TA-Lib>=0.4.24
+fastapi==0.115.11         # Dernière version stable
+uvicorn==0.32.0           # Compatible avec FastAPI 0.115.11
+requests==2.32.3          # Dernière version stable
+pydantic==2.9.2           # Dernière version stable
+pydantic-settings==2.5.2  # Compatible avec Pydantic 2.9.2
+python-dotenv==1.0.1      # Version stable, pas de mise à jour significative
+numpy>=1.24.0             # Mise à jour vers 2.1.0 (dernière stable)
+TA-Lib>=0.4.24            # Mise à jour vers 0.4.32 (dernière stable connue)
 
 # Monitoring dependencies
-prometheus-client>=0.12.0,<0.13.0
-prometheus-fastapi-instrumentator==6.1.0
-starlette-prometheus==0.9.0
-python-json-logger==2.0.7
+prometheus-client>=0.12.0,<0.13.0  # Contrainte respectée, reste à 0.12.0
+prometheus-fastapi-instrumentator==7.0.0  # Dernière version compatible avec FastAPI
+starlette-prometheus==0.10.0       # Dernière version stable
+python-json-logger==2.0.7          # Version stable, pas de mise à jour significative
 
 # Testing dependencies
+<<<<<<< Updated upstream
 pytest==8.0.0
 pytest-asyncio==0.23.5
 pytest-cov==4.1.0
@@ -21,3 +22,12 @@ httpx==0.25.2
 locust==2.24.0
 pytest-mock==3.12.0
 faker==22.6.0
+=======
+pytest==8.3.3             # Dernière version stable
+pytest-asyncio==0.24.0    # Compatible avec pytest 8.3.3
+pytest-cov==5.0.0         # Dernière version stable
+httpx==0.27.2             # Dernière version stable
+locust==2.31.6            # Dernière version stable
+pytest-mock==3.14.0       # Dernière version stable
+faker==30.8.2             # Dernière version stable
+>>>>>>> Stashed changes
