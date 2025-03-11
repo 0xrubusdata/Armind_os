@@ -1,3 +1,24 @@
-fastapi==0.115.11
+# 🚀 FastAPI + Serveur ASGI
+fastapi==0.115.11  # Dernière version stable connue au 11/03/2025
 uvicorn==0.34.0
 requests==2.31.0
+
+# 🏛️ PostgreSQL (ORM + Driver)
+sqlalchemy==2.0.35  # Dernière version stable, compatible avec asyncpg
+asyncpg==0.30.0     # Dernière version stable
+
+# 🧠 NLP & Vectorisation
+sentence-transformers==3.1.1  # Dernière version stable
+numpy==2.1.0                  # Dernière version stable, compatible avec FAISS
+
+# 🔍 Base vectorielle (FAISS & ChromaDB)
+faiss-cpu==1.9.0     # Dernière version stable
+chromadb==0.6.3      # Dernière version stable
+
+# 🔧 Outils complémentaires
+python-dotenv==1.0.1      # Pas de mise à jour significative, version stable
+python-json-logger==2.0.7  # Pas de mise à jour significative, version stable
+schedule==1.2.2           # Petite mise à jour disponible
+httpx==0.27.2             # Dernière version stable
+pydantic==2.9.2           # Dernière version stable
+pydantic-settings==2.5.2  # Dernière version stable, compatible avec pydantic 2.9.2
