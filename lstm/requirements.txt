@@ -1,11 +1,11 @@
-fastapi==0.109.2
-uvicorn==0.27.1
-httpx==0.25.2
-pydantic==2.6.1
-pydantic-settings==2.1.0
-python-dotenv==1.0.1
-python-json-logger==2.0.7
-numpy==1.24.3
-pandas==2.1.4
-torch==2.1.2
-matplotlib==3.8.2
+fastapi==0.115.11         # Dernière version stable
+uvicorn==0.32.0           # Compatible avec FastAPI 0.115.11
+httpx==0.27.2             # Dernière version stable
+pydantic==2.9.2           # Dernière version stable
+pydantic-settings==2.5.2  # Compatible avec Pydantic 2.9.2
+python-dotenv==1.0.1      # Version stable, pas de mise à jour significative
+python-json-logger==2.0.7  # Version stable, pas de mise à jour significative
+numpy==2.1.0              # Dernière version stable
+pandas==2.2.3             # Dernière version stable, compatible avec NumPy 2.1.0
+torch==2.4.1              # Dernière version stable
+matplotlib==3.9.2         # Dernière version stable, compatible avec NumPy 2.1.0
