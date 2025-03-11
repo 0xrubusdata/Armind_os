@@ -1,13 +1,13 @@
-fastapi==0.109.2
-uvicorn==0.27.1
-httpx==0.25.2
-pydantic==2.6.1
-pydantic-settings==2.1.0
-python-dotenv==1.0.1
-python-json-logger==2.0.7
-pytest==8.0.0
-pytest-asyncio==0.23.5
-starlette==0.36.3
-typing-extensions==4.9.0
-tenacity==8.2.3
-ollama
+fastapi==0.115.11         # Dernière version stable
+uvicorn==0.32.0           # Compatible avec FastAPI 0.115.11
+httpx==0.27.2             # Dernière version stable
+pydantic==2.9.2           # Dernière version stable
+pydantic-settings==2.5.2  # Compatible avec Pydantic 2.9.2
+python-dotenv==1.0.1      # Version stable, pas de mise à jour significative
+python-json-logger==2.0.7  # Version stable, pas de mise à jour significative
+pytest==8.3.3             # Dernière version stable
+pytest-asyncio==0.24.0    # Compatible avec pytest 8.3.3
+starlette==0.46.1         # Compatible avec FastAPI 0.115.11
+typing-extensions==4.12.2 # Dernière version stable
+tenacity==9.0.0           # Dernière version stable
+ollama==0.3.3             # Version récente supposée pour la bibliothèque Python ollama
